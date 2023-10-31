@@ -14,4 +14,18 @@ const loginUser = async (data) => {
     .catch((er) => er);
 };
 
-export { registerUser, loginUser };
+const forgotPassword = async (email) => {
+  return axios
+    .patch(`${URL}/user/forgot`, { email })
+    .then((res) => res)
+    .catch((er) => er);
+};
+
+const resetPassword = async (data) => {
+  console.log("data", data);
+  return axios
+    .patch(`${URL}/user/reset-password`, data)
+    .then((res) => res)
+    .catch((er) => er);
+};
+export { registerUser, loginUser, forgotPassword, resetPassword };

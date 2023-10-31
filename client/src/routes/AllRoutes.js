@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar";
+import ForgotPassword from "../pages/ResetPassword/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import PrivateRoutes from "./PrivateRoutes";
-
-const { Routes, Route } = require("react-router-dom");
-const { default: Home } = require("../pages/Home");
-const { default: RegisterLoginForm } = require("../pages/RegisterLoginForm");
-const { default: Campaign } = require("../pages/Campaign");
+import Home from "../pages/Home";
+import { Routes, Route } from "react-router-dom";
+import RegisterLoginForm from "../pages/RegisterLoginForm";
+import Campaign from "../pages/Campaign";
 
 const AllRoutes = () => {
   return (
@@ -13,6 +14,8 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register-login-user" element={<RegisterLoginForm />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/reset" element={<ResetPassword />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/campaign" element={<Campaign />} />
         </Route>

@@ -127,6 +127,15 @@ const RegisterLoginForm = () => {
             onChange={(e) => setFile(e.target.files[0])}
           />
         )}
+        {toggleDiv === "login" && (
+          <Button
+            size="small"
+            sx={{ width: "40%" }}
+            onClick={() => navigate("/forgot")}
+          >
+            FORGOT PASSWORD
+          </Button>
+        )}
         <Button variant="contained" color="success" size="small" type="submit">
           {toggleDiv === "register" ? " REGISTER USER" : "LOGIN USER"}
         </Button>

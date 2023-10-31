@@ -20,11 +20,11 @@ const Navbar = () => {
           sx={{
             display: "flex",
             justifyContent: "space-around",
-            // alignItems: "center",
+            alignItems: "center",
           }}
         >
           <Link to="/">HOME</Link>
-          <Link to="/campaign">ADD CAMPAIGN</Link>
+          {loginAuth && <Link to="/campaign">ADD CAMPAIGN</Link>}
           <Box sx={{ display: "flex", gap: "1rem", alignItems: "center" }}>
             {loginAuth && (
               <>

@@ -39,17 +39,17 @@ const resetPasswordController = async (req, res, next) => {
     const userExist = await User.findOne({ email });
     if (!userExist)
       return next(createError("User not exist..", 400, "reset passwod"));
-    if (userExist?.otp?.otpCode !== Number(Otp))
-      return next(createError("Otp not match", 400, "resetn controller"));
     let diff = userExist?.otp?.expiresOtp - Date.now();
     if (diff < 0) {
-      await User.findOneAndUpdate(
-        { email },
-        { $unset: { otp: -1 } },
-        { new: true }
-      );
       return next(createError("Otp Expires..", 400, "reset controller"));
     }
+    if (userExist?.otp?.otpCode !== Number(Otp))
+      return next(createError("Otp not match", 400, "resetn controller"));
+    await User.findOneAndUpdate(
+      { email },
+      { $unset: { otp: -1 } },
+      { new: true }
+    );
     const hash_password = await hashPassword(newPassword);
     await User.findOneAndUpdate(
       { email },

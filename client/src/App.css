@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* body {
+  background-image: url(https://images.crunchbase.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/anzxiakacttiyjnus2os);
+  height: calc(100% - 90px);
+  background-repeat: no-repeat;
+  background-size: calc(100% - 80px);
+} */

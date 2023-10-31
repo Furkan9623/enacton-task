@@ -20,7 +20,7 @@ const Navbar = () => {
           sx={{
             display: "flex",
             justifyContent: "space-around",
-            alignItems: "center",
+            // alignItems: "center",
           }}
         >
           <Link to="/">HOME</Link>

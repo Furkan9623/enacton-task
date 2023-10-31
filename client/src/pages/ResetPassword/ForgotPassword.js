@@ -5,6 +5,7 @@ import { forgotPassword } from "../../api/user-api";
 const ForgotPassword = () => {
   const navigate = useNavigate();
   const emailRef = useRef(null);
+  
   const forgotFormSubmit = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
@@ -15,6 +16,7 @@ const ForgotPassword = () => {
       ? (alert("Otp send on your email id"), navigate(`/reset?email=${email}`))
       : alert(er);
   };
+
   return (
     <Box
       sx={{
@@ -42,6 +44,7 @@ const ForgotPassword = () => {
       </form>
     </Box>
   );
+
 };
 
 export default ForgotPassword;

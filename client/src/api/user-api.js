@@ -7,6 +7,7 @@ const registerUser = async (data) => {
     .then((res) => res)
     .catch((er) => er);
 };
+
 const loginUser = async (data) => {
   return axios
     .post(`${URL}/user/login`, data)

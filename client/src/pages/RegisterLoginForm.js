@@ -39,8 +39,10 @@ const RegisterLoginForm = () => {
         setFormInput(initValue))
       : alert(er);
   };
+
   const navigate = useNavigate();
   const { setLoginAuth } = useContext(loginContext);
+
   const loginFormSubmit = async (e) => {
     e.preventDefault();
     console.log(formInput);
@@ -56,6 +58,7 @@ const RegisterLoginForm = () => {
       : alert(er);
   };
   const { email, password } = formInput;
+
   return (
     <Box
       sx={{

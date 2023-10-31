@@ -9,6 +9,7 @@ const ResetPassword = () => {
   const passwordRef = useRef(null);
   const otpRef = useRef(null);
   const navigate = useNavigate();
+
   const resetFormSubmit = async (e) => {
     e.preventDefault();
     const newPassword = passwordRef.current.value;
@@ -20,6 +21,7 @@ const ResetPassword = () => {
       ? (alert("new password set"), navigate("/register-login-user"))
       : alert(er);
   };
+
   return (
     <Box
       sx={{

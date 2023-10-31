@@ -9,10 +9,12 @@ const Navbar = () => {
   const loginUser = () => {
     navigate("/register-login-user");
   };
+
   const logoutUser = () => {
     localStorage.clear();
     setLoginAuth(false);
   };
+
   return (
     <Box>
       <AppBar>
@@ -45,5 +47,6 @@ const Navbar = () => {
       </AppBar>
     </Box>
   );
+  
 };
 export default Navbar;

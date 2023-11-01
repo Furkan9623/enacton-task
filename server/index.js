@@ -8,6 +8,7 @@ const {
 } = require("./middleware/error-handler-middleware.js");
 const user_router = require("./routers/users-router");
 const fileUpload = require("express-fileupload");
+const campaign_router = require("./routers/campaigns-router");
 const app = express();
 
 // middleWare
@@ -17,6 +18,7 @@ app.use(fileUpload({ useTempFiles: true }));
 // all routers
 app.get("/", (req, res) => res.send(`<h1>Application ready to run</h1>`));
 app.use("/api/v1/user", user_router);
+app.use("/api/v1/campaign", campaign_router);
 app.use("*", (req, res, next) =>
   next(
     createError(

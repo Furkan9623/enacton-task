@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("loginAuth", loginAuth);
   }, [loginAuth]);
+  
   return (
     <loginContext.Provider value={{ loginAuth, setLoginAuth }}>
       {children}
